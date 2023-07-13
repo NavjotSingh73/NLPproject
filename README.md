@@ -46,4 +46,4 @@ Contributions to this project are welcome. If you find any bugs or have suggesti
 
 ## License
 
-[ License](https://opensource.org/licenses/gnv)
+[ License GNU General Public License v3.0](https://opensource.org/licenses/gnu)
