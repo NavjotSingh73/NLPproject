@@ -2,22 +2,22 @@ import tkinter as tk
 from tkinter import scrolledtext
 import spacy
 
-# Load the English language model
+
 nlp = spacy.load('en_core_web_sm')
 
 def process_text():
-    # Get the input text from the GUI
+    
     text = input_text.get("1.0", tk.END).strip()
 
-    # Process the text with spaCy
+    
     doc = nlp(text)
 
-    # Clear the previous tokens/buttons
+    
     clear_tokens()
 
-    # Process each token
+    
     for token in doc:
-        # Get the lemma of the token
+    
         lemma = token.lemma_
 
         # Get the part of speech tag of the token
@@ -45,25 +45,25 @@ def clear_tokens():
 window = tk.Tk()
 window.title("Token Processor")
 
-# Input text box
+# Input text
 input_label = tk.Label(window, text="Input Text:")
 input_label.pack()
 input_text = scrolledtext.ScrolledText(window, height=10)
 input_text.pack()
 
-# Process button
+
 process_button = tk.Button(window, text="Process", command=process_text)
 process_button.pack()
 
-# Output frame for token buttons
+
 output_frame = tk.Frame(window)
 output_frame.pack()
 
-# Description text box
+
 description_label = tk.Label(window, text="Token Description:")
 description_label.pack()
 description_text = scrolledtext.ScrolledText(window, height=10)
 description_text.pack()
 
-# Run the GUI main loop
+
 window.mainloop()
