@@ -3,11 +3,11 @@ from tkinter import scrolledtext
 import spacy
 from textblob import TextBlob
 
-# Load the English language model
+
 nlp = spacy.load('en_core_web_sm')
 
 def process_text():
-    # Get the input text from the GUI
+    
     text = input_text.get("1.0", tk.END).strip()
 
     # Process the text with spaCy for named entity recognition
@@ -18,11 +18,11 @@ def process_text():
     blob = TextBlob(text)
     sentiment = blob.sentiment.polarity
 
-    # Display the output
+    
     display_output(entities, sentiment)
 
 def display_output(entities, sentiment):
-    # Clear the previous output
+    
     output_text.delete("1.0", tk.END)
 
     # Display named entities
@@ -34,7 +34,7 @@ def display_output(entities, sentiment):
     output_text.insert(tk.END, "\nSentiment Analysis:\n")
     output_text.insert(tk.END, f"Sentiment Score: {sentiment}\n")
 
-# Create the GUI
+
 window = tk.Tk()
 window.title("NLP Analysis")
 
@@ -54,5 +54,5 @@ output_label.pack()
 output_text = scrolledtext.ScrolledText(window, height=10)
 output_text.pack()
 
-# Run the GUI main loop
+
 window.mainloop()
